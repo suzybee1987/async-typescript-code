@@ -36,11 +36,13 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',
     }),
-    new CopyWebpackPlugin([
-      {
-        from: `./${index}.html`,
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: `./${index}.html`,
+        },
+      ],
+    }),
   ],
   resolve: {
     extensions: ['.ts', '.js'],
